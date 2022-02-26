@@ -38,7 +38,7 @@ models:
 ```
 2. Launch the client with the file as argument and the destination folder:
 ```bash
-$ java -jar resgen.jar contact.yml -d contact-resources/
+$ java -jar aop-resgen.jar contact.yml -d contact-resources/
 ```
 
 3. You domains, views and menus in XML are generated. You can copy and
