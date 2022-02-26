@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+}
+
+application {
+    mainClass = 'com.axelor.cli.resgen.App'
+}
+
+jar {
+    archivesBaseName = "resgen"
+    manifest {
+        attributes 'Main-Class': 'com.axelor.cli.resgen.App'
+    }
+}

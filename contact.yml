@@ -1,0 +1,28 @@
+models:
+  - title:
+      name: string
+      code: string
+  - country:
+      name: string
+      code: string
+  - address:
+      street: string
+      zip: string
+      city: string
+      country:
+        type: m2o
+        ref: country
+  - contact:
+      title:
+        type: m2o
+        ref: title
+      lastName: string
+      firstName: string
+      fullName: string
+      birthDate: date
+      email: string
+      phone: string
+      address:
+        type: m2o
+        ref: address
+      image: binary
