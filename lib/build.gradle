@@ -1,5 +1,5 @@
 plugins {
-    id 'application'
+    id 'java-library'
 }
 
 repositories {
@@ -9,20 +9,18 @@ repositories {
 dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-    implementation project(':lib')
 
     testImplementation 'junit:junit:4.13'
     testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
-application {
-    mainClass = 'dev.schriever.resgencli.App'
-}
+version '1.0.0'
+setArchivesBaseName("aop-resgen")
 
-jar {
-    archivesBaseName = "resgen-cli"
+tasks.named('jar') {
     manifest {
-        attributes 'Main-Class': application.mainClass
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
     }
 }

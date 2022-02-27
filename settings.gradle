@@ -1,2 +1,3 @@
-rootProject.name = 'axelor-resources-generator'
+rootProject.name = 'aop-resources-generator'
 include('app')
+include('lib')
