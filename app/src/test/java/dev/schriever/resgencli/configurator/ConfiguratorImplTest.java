@@ -1,12 +1,10 @@
 package dev.schriever.resgencli.configurator;
 
-import dev.schriever.aop.resgen.service.GetAopEntityFieldTypeImpl;
-import dev.schriever.aop.resgen.service.GetAopEntityNameConventionImpl;
-import dev.schriever.aop.resgen.service.TransformModelToAopEntityImpl;
+import dev.schriever.aop.resgen.service.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class ConfiguratorImplTest {
 
@@ -28,7 +26,22 @@ public class ConfiguratorImplTest {
   }
 
   @Test
+  public void getAopViewNameConvention() {
+    assertTrue(configurator.getAopViewNameConvention() instanceof GetAopViewNameConventionImpl);
+  }
+
+  @Test
   public void transformModelToAopEntity() {
     assertTrue(configurator.transformModelToAopEntity() instanceof TransformModelToAopEntityImpl);
+  }
+
+  @Test
+  public void transformModelToAopFormView() {
+    assertTrue(configurator.transformModelToAopFormView() instanceof TransformModelToAopFormViewImpl);
+  }
+
+  @Test
+  public void transformModelToAopGridView() {
+    assertTrue(configurator.transformModelToAopGridView() instanceof TransformModelToAopGridViewImpl);
   }
 }
