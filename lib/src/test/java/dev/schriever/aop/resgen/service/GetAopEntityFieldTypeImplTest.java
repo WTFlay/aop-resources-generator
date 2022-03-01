@@ -1,6 +1,7 @@
 package dev.schriever.aop.resgen.service;
 
 import dev.schriever.aop.resgen.entity.fieldtype.FieldType;
+import dev.schriever.aop.resgen.entity.fieldtype.ManyToOneFieldType;
 import dev.schriever.aop.resgen.entity.fieldtype.StringFieldType;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,5 +32,11 @@ public class GetAopEntityFieldTypeImplTest {
         return fieldType;
       }
     });
+  }
+
+  @Test
+  public void executeWithManyToOneFieldType() {
+    String entityFieldType = getAopEntityFieldType.execute(new ManyToOneFieldType());
+    assertEquals("many-to-one", entityFieldType);
   }
 }

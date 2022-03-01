@@ -2,6 +2,8 @@ package dev.schriever.resgencli.configurator;
 
 import dev.schriever.aop.resgen.service.*;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 public class ConfiguratorImpl implements Configurator {
   public GetAopEntityFieldType getAopEntityFieldType() {
     return new GetAopEntityFieldTypeImpl();
@@ -28,5 +30,10 @@ public class ConfiguratorImpl implements Configurator {
   @Override
   public TransformModelToAopGridView transformModelToAopGridView() {
     return new TransformModelToAopGridViewImpl(getAopEntityNameConvention(), getAopViewNameConvention());
+  }
+
+  @Override
+  public WriteAopToDocument writeAopToDocument() throws ParserConfigurationException {
+    return new WriteAopToDocument();
   }
 }
